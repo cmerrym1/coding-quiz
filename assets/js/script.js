@@ -1,6 +1,7 @@
+var counter = 75;
+
 function startTimer(){
-    var counter = 75;
-    setInterval(function() {
+    var timer = setInterval(function() {
       counter--;
       if (counter >= 0) {
         span = document.getElementById("count");
@@ -30,25 +31,6 @@ function showPage2() {
         x.style.display = "block";
     }
 };
-
-function wrongAnswer() {
-    var x = document.getElementById("wrong")
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-};
-
-function correctAnswer() {
-    var x = document.getElementById("correct")
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-};
-
 
 function hidePage2() {
     var x = document.getElementById("page2");
@@ -157,10 +139,15 @@ function showPage1() {
         x.style.display = "block";
     }
 };
-  
+
   function start()
   {
       document.getElementById("count");
       startTimer();
   };
   
+  function wrongAnswer() {
+    counter -= 5;
+    span = document.getElementById("count");
+        span.innerHTML = counter;
+};
